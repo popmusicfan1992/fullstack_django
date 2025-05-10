@@ -9,8 +9,8 @@ const Dealers = () => {
   // let [state, setState] = useState("")
   let [states, setStates] = useState([])
 
-  // let root_url = window.location.origin
-  let dealer_url ="/djangoapp/get_dealers";
+  //let root_url = window.location.origin
+  let dealer_url = "/djangoapp/get_dealers/";
   
   let dealer_url_by_state = "/djangoapp/get_dealers/";
  
@@ -31,6 +31,8 @@ const Dealers = () => {
       method: "GET"
     });
     const retobj = await res.json();
+    console.log("res",res)
+    console.log("retobj",retobj)
     if(retobj.status === 200) {
       let all_dealers = Array.from(retobj.dealers)
       let states = [];

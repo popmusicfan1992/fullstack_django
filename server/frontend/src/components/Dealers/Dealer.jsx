@@ -26,7 +26,8 @@ const Dealer = () => {
   
   const get_dealer = async ()=>{
     const res = await fetch(dealer_url, {
-      method: "GET"
+      method: "GET",
+      headers: { "Accept": "application/json" },
     });
     const retobj = await res.json();
     
